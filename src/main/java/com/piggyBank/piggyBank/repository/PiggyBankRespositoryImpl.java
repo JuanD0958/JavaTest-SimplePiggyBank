@@ -1,11 +1,17 @@
 package com.piggyBank.piggyBank.repository;
+import com.piggyBank.piggyBank.domain.Coin;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.HashMap;
 
 @Component
 public class PiggyBankRespositoryImpl implements PiggyBankRepository{
 
+    @Autowired
+    private Coin coin;
     private HashMap<Integer,Integer> piggyBank;
+
+
 
     public PiggyBankRespositoryImpl(){
         piggyBank = new HashMap<Integer, Integer>();
@@ -18,14 +24,14 @@ public class PiggyBankRespositoryImpl implements PiggyBankRepository{
     }
 
     @Override
-    public void insertCoin(int type){
-        int count = piggyBank.get(type);
-        piggyBank.put(type,count + 1);
+    public void insertCoin(Coin coin){
+        int count = piggyBank.get(coin.getValue());
+        piggyBank.put(coin.getValue(),count + 1);
     }
 
     @Override
-    public int getTotalCountCoinsByType(int type){
-        return piggyBank.get(type);
+    public int getTotalCountCoinsByType(int value){
+        return piggyBank.get(value);
     }
 
     @Override
