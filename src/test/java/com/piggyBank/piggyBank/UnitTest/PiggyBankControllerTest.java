@@ -2,6 +2,8 @@ package com.piggyBank.piggyBank.UnitTest;
 
 
 import com.piggyBank.piggyBank.controllers.PiggyBankController;
+import com.piggyBank.piggyBank.domain.Coin;
+import com.piggyBank.piggyBank.exeptions.ExceptionMessages;
 import com.piggyBank.piggyBank.repository.PiggyBankRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,6 +32,7 @@ public class PiggyBankControllerTest {
     PiggyBankController piggyBankController;
     @Mock
     PiggyBankRepository piggyBankRepository;
+
 
 
     @Before
@@ -85,7 +88,7 @@ public class PiggyBankControllerTest {
             piggyBankController.numberOfCounsByType(type);
             fail();
         } catch (Exception e) {
-            assertEquals("Type of coin does not exist!!!", e.getMessage());
+            assertEquals(ExceptionMessages.WRONG_VALUE_OF_COIN, e.getMessage());
         }
     }
 
@@ -98,9 +101,9 @@ public class PiggyBankControllerTest {
 
     @Test
     public void insertCoinIntoPiggy(){
-        int type = 50;
-        Mockito.doNothing().when(piggyBankRepository).insertCoin(isA(Integer.class));
-        piggyBankController.insertCoinIntoPiggy(type);
-        verify(piggyBankRepository, times(1)).insertCoin(type);
+        Coin coin = new Coin(50);
+        Mockito.doNothing().when(piggyBankRepository).insertCoin(coin);
+        piggyBankController.insertCoinIntoPiggy(coin);
+        verify(piggyBankRepository, times(1)).insertCoin(coin);
     }
 }

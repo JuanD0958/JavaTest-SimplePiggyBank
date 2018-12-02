@@ -1,6 +1,7 @@
 package com.piggyBank.piggyBank.api;
 
 
+import com.piggyBank.piggyBank.domain.Coin;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public interface PiggyBankServices {
 
-    @RequestMapping("/getNumberOfCoins")
+    @RequestMapping("/getTotalNumberOfCoins")
     int totalNumberOfCoins();
 
     @PostMapping("/insertCoinIntoPiggy")
-     void insertCoinIntoPiggy(@RequestBody int coin);
+     void insertCoinIntoPiggy(@RequestBody Coin coin);
 
-    @GetMapping("/getNumberOfCounsByType")
-    int numberOfCounsByType(@RequestParam("type") int typeCoin);
+    @GetMapping("/getNumberOfCounsByValue")
+    int numberOfCounsByType(@RequestParam("value") int valueCoin);
 }
