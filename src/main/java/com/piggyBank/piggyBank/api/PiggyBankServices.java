@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public interface PiggyBankServices {
 
-    @RequestMapping("/getTotalNumberOfCoins")
+    @GetMapping("/getTotalNumberOfCoins")
     int totalNumberOfCoins();
 
     @PostMapping("/insertCoinIntoPiggy")
