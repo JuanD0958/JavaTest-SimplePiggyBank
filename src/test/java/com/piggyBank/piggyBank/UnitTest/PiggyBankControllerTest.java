@@ -44,40 +44,40 @@ public class PiggyBankControllerTest {
     @Test
     public void getTotalCountOf50Coins(){
         int type = 50;
-        Mockito.when(piggyBankRepository.getTotalCountCoinsByType(type)).thenReturn(30);
-        int numberOfCoins= piggyBankController.numberOfCounsByType(type);
+        Mockito.when(piggyBankRepository.getTotalCountCoinsByValue(type)).thenReturn(30);
+        int numberOfCoins= piggyBankController.numberOfCounsByValue(type);
         assertEquals(30,numberOfCoins);
     }
 
     @Test
     public void getTotalCountOf100Coins(){
         int type = 100;
-        Mockito.when(piggyBankRepository.getTotalCountCoinsByType(type)).thenReturn(40);
-        int numberOfCoins= piggyBankController.numberOfCounsByType(type);
+        Mockito.when(piggyBankRepository.getTotalCountCoinsByValue(type)).thenReturn(40);
+        int numberOfCoins= piggyBankController.numberOfCounsByValue(type);
         assertEquals(40,numberOfCoins);
     }
 
     @Test
     public void getTotalCountOf200Coins(){
         int type = 200;
-        Mockito.when(piggyBankRepository.getTotalCountCoinsByType(type)).thenReturn(28);
-        int numberOfCoins= piggyBankController.numberOfCounsByType(type);
+        Mockito.when(piggyBankRepository.getTotalCountCoinsByValue(type)).thenReturn(28);
+        int numberOfCoins= piggyBankController.numberOfCounsByValue(type);
         assertEquals(28,numberOfCoins);
     }
 
     @Test
     public void getTotalCountOf500Coins(){
         int type = 500;
-        Mockito.when(piggyBankRepository.getTotalCountCoinsByType(type)).thenReturn(45);
-        int numberOfCoins= piggyBankController.numberOfCounsByType(type);
+        Mockito.when(piggyBankRepository.getTotalCountCoinsByValue(type)).thenReturn(45);
+        int numberOfCoins= piggyBankController.numberOfCounsByValue(type);
         assertEquals(45,numberOfCoins);
     }
 
     @Test
     public void getTotalCountOf1000Coins(){
         int type = 1000;
-        Mockito.when(piggyBankRepository.getTotalCountCoinsByType(type)).thenReturn(19);
-        int numberOfCoins= piggyBankController.numberOfCounsByType(type);
+        Mockito.when(piggyBankRepository.getTotalCountCoinsByValue(type)).thenReturn(19);
+        int numberOfCoins= piggyBankController.numberOfCounsByValue(type);
         assertEquals(19,numberOfCoins);
     }
 
@@ -85,7 +85,7 @@ public class PiggyBankControllerTest {
     public void wrongTypeOfCoin(){
         try {
             int type = 6000;
-            piggyBankController.numberOfCounsByType(type);
+            piggyBankController.numberOfCounsByValue(type);
             fail();
         } catch (Exception e) {
             assertEquals(ExceptionMessages.WRONG_VALUE_OF_COIN, e.getMessage());

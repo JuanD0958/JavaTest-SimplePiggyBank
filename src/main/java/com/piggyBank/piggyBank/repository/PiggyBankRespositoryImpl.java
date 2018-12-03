@@ -30,7 +30,7 @@ public class PiggyBankRespositoryImpl implements PiggyBankRepository{
     }
 
     @Override
-    public int getTotalCountCoinsByType(int value){
+    public int getTotalCountCoinsByValue(int value){
         return piggyBank.get(value);
     }
 

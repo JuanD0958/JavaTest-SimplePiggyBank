@@ -1,12 +1,12 @@
 package com.piggyBank.piggyBank.exeptions;
 
-public class CoinTypeException extends RuntimeException {
+public class CoinValueException extends RuntimeException {
     /**
      *
      */
     private static final long serialVersionUID = -2812190201200119620L;
 
-    public CoinTypeException(String message) {
+    public CoinValueException(String message) {
         super(message);
     }
 }
