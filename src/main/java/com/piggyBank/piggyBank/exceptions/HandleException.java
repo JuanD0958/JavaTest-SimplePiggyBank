@@ -1,4 +1,4 @@
-package com.piggyBank.piggyBank.exeptions;
+package com.piggyBank.piggyBank.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

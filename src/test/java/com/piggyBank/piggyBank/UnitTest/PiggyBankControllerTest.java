@@ -3,7 +3,7 @@ package com.piggyBank.piggyBank.UnitTest;
 
 import com.piggyBank.piggyBank.controllers.PiggyBankController;
 import com.piggyBank.piggyBank.domain.Coin;
-import com.piggyBank.piggyBank.exeptions.ExceptionMessages;
+import com.piggyBank.piggyBank.exceptions.ExceptionMessages;
 import com.piggyBank.piggyBank.repository.PiggyBankRepository;
 import org.junit.Before;
 import org.junit.Test;

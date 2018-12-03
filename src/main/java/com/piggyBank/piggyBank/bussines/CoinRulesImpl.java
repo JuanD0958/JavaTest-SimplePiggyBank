@@ -1,7 +1,7 @@
 package com.piggyBank.piggyBank.bussines;
 
-import com.piggyBank.piggyBank.exeptions.CoinValueException;
-import com.piggyBank.piggyBank.exeptions.ExceptionMessages;
+import com.piggyBank.piggyBank.exceptions.CoinValueException;
+import com.piggyBank.piggyBank.exceptions.ExceptionMessages;
 import org.springframework.stereotype.Component;
 
 @Component
