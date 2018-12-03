@@ -16,5 +16,5 @@ public interface PiggyBankServices {
      void insertCoinIntoPiggy(@RequestBody Coin coin);
 
     @GetMapping("/getNumberOfCounsByValue")
-    int numberOfCounsByValue(@RequestParam("value") int valueCoin);
+    int numberOfCoinsByValue(@RequestParam("value") int valueCoin);
 }

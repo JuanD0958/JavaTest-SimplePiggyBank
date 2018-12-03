@@ -17,7 +17,7 @@ public class PiggyBankController implements PiggyBankServices {
 
     @Override
     public void insertCoinIntoPiggy(Coin coin){
-        coinRules.validateTypeOfCoin(coin.getValue());
+        coinRules.validateValueOfCoin(coin.getValue());
         piggyBankRepository.insertCoin(coin);
     }
 
@@ -27,8 +27,8 @@ public class PiggyBankController implements PiggyBankServices {
     }
 
     @Override
-    public int numberOfCounsByValue(int value){
-        coinRules.validateTypeOfCoin(value);
+    public int numberOfCoinsByValue(int value){
+        coinRules.validateValueOfCoin(value);
         return piggyBankRepository.getTotalCountCoinsByValue(value);
     }
 }

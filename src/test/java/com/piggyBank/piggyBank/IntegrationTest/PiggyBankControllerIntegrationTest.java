@@ -24,9 +24,9 @@ public class PiggyBankControllerIntegrationTest {
     private Coin coin1000;
 
     @Autowired
-    PiggyBankController piggyBankController;
+    private PiggyBankController piggyBankController;
     @Autowired
-    PiggyBankRepository piggyBankRepository;
+    private PiggyBankRepository piggyBankRepository;
 
 
     @Before
@@ -71,7 +71,7 @@ public class PiggyBankControllerIntegrationTest {
     public void getTotalCountOf50Coins(){
         piggyBankRepository.clearData();
         insertCountOfCoinsByType(coin50,25);
-        int numberOfCoins= piggyBankController.numberOfCounsByValue(coin50.getValue());
+        int numberOfCoins= piggyBankController.numberOfCoinsByValue(coin50.getValue());
         assertEquals(25,numberOfCoins);
     }
 
