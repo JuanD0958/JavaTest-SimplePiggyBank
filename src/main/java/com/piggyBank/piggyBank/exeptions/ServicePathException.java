@@ -8,7 +8,7 @@ public class ServicePathException extends RuntimeException {
     /**
      *
      */
-    private static final long serialVersionUID = -2812190201200119620L;
+    private static final long serialVersionUID = 1L;
 
     public ServicePathException(String message) {
         super(message);

@@ -19,7 +19,7 @@ public class HandleException extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ServicePathException.class)
     public final ResponseEntity<String> handleUserNotFoundException(ServicePathException ex, WebRequest request) {
-        return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
+        return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
