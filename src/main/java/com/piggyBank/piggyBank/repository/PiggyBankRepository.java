@@ -9,5 +9,5 @@ public interface PiggyBankRepository {
 
     int getTotalCountCoins();
 
-    void clearData();
+    void init();
 }

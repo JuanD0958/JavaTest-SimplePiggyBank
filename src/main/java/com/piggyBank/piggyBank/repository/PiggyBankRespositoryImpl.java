@@ -8,20 +8,10 @@ import java.util.HashMap;
 @Component
 public class PiggyBankRespositoryImpl implements PiggyBankRepository{
 
-    @Autowired
-    private Coin coin;
     private HashMap<Integer,Integer> piggyBank;
 
-
-
     public PiggyBankRespositoryImpl(){
-        piggyBank = new HashMap<Integer, Integer>();
-
-        piggyBank.put(50,0);
-        piggyBank.put(100,0);
-        piggyBank.put(200,0);
-        piggyBank.put(500,0);
-        piggyBank.put(1000,0);
+        init();
     }
 
     @Override
@@ -45,7 +35,8 @@ public class PiggyBankRespositoryImpl implements PiggyBankRepository{
     }
 
     @Override
-    public void clearData(){
+    public void init(){
+        piggyBank = new HashMap<Integer, Integer>();
         piggyBank.put(50,0);
         piggyBank.put(100,0);
         piggyBank.put(200,0);

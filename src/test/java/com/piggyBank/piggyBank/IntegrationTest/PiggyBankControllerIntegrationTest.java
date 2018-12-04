@@ -37,7 +37,7 @@ public class PiggyBankControllerIntegrationTest {
         coin500 = new Coin(500);
         coin1000 = new Coin(1000);
 
-        piggyBankRepository.clearData();
+        piggyBankRepository.init();
     }
 
     private void insertCountOfCoinsByType(Coin coin, int count) {
@@ -48,28 +48,28 @@ public class PiggyBankControllerIntegrationTest {
 
     @Test
     public void insertCoin100IntoPiggy(){
-        piggyBankRepository.clearData();
+        piggyBankRepository.init();
         piggyBankController.insertCoinIntoPiggy(coin100);
         assertEquals(1,piggyBankRepository.getTotalCountCoinsByValue(coin100.getValue()));
     }
 
     @Test
     public  void insertCoin200IntoPiggy(){
-        piggyBankRepository.clearData();
+        piggyBankRepository.init();
         piggyBankController.insertCoinIntoPiggy(coin200);
         assertEquals(1,piggyBankRepository.getTotalCountCoinsByValue(coin200.getValue()));
     }
 
     @Test
     public void insertCoin500IntoPiggy(){
-        piggyBankRepository.clearData();
+        piggyBankRepository.init();
         piggyBankController.insertCoinIntoPiggy(coin500);
         assertEquals(1,piggyBankRepository.getTotalCountCoinsByValue(coin500.getValue()));
     }
 
     @Test
     public void getTotalCountOf50Coins(){
-        piggyBankRepository.clearData();
+        piggyBankRepository.init();
         insertCountOfCoinsByType(coin50,25);
         int numberOfCoins= piggyBankController.numberOfCoinsByValue(coin50.getValue());
         assertEquals(25,numberOfCoins);
@@ -78,7 +78,7 @@ public class PiggyBankControllerIntegrationTest {
 
     @Test
     public void getTotalCountOfCoins(){
-        piggyBankRepository.clearData();
+        piggyBankRepository.init();
         insertCountOfCoinsByType(coin50,23);
         insertCountOfCoinsByType(coin100,7);
         insertCountOfCoinsByType(coin200,10);
